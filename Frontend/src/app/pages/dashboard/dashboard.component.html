@@ -1,0 +1,19 @@
+<div class="banner-slider">
+  <div class="slide" *ngFor="let banner of banners; let i = index" [class.active]="i === currentSlide">
+    <img [src]="banner" alt="Banner {{ i + 1 }}" />
+  </div>
+  <button (click)="prevSlide()">&#10094;</button> <!-- Previous Button -->
+  <button (click)="nextSlide()">&#10095;</button> <!-- Next Button -->
+</div>
+
+<!-- Product Grid -->
+<div class="product-grid">
+  <div *ngFor="let product of products" class="product-card" (click)="viewProductPage(product.productId)">
+    <img [src]="product.imageUrl" alt="{{ product.name }}" />
+    <h3>{{ product.title }}</h3>
+    <p>{{ product.description }}</p>
+    <p>Price:{{ product.price | currency}}</p>
+    <p>Rating: {{ product.rating }} ⭐</p>
+    <button (click)="addtocart($event, product.productId)">Add to Cart</button>
+  </div>
+</div>

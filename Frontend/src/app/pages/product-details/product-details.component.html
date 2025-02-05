@@ -1,0 +1,32 @@
+<div class="product-details" *ngIf="product; else errorTemplate">
+  <div class="product-header">
+    <h1>{{ product.name }}</h1>
+    <p class="category">Category: <strong>{{ product.category }}</strong></p>
+  </div>
+
+  <div class="product-body">
+    <div class="product-image">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" />
+    </div>
+
+    <div class="product-info">
+      <p><strong>Price: </strong> ${{ product.price }}</p>
+      <p><strong>Availability: </strong> <span [ngClass]="{ 'available': product.availabilityStatus === 'In Stock', 'unavailable': product.availabilityStatus === 'Out of Stock' }">{{ product.availabilityStatus }}</span></p>
+      <p><strong>Rating:</strong> {{ product.rating }}⭐ [{{ product.reviewsCount }} reviews]</p>
+      <p><strong>Description:</strong> {{ product.description }}</p>
+      <p><strong>Specifications:</strong> {{ product.specifications }}</p>
+      <p><strong>Size: </strong>Model height 188cm.<br> The model (Chest-39, Waist-32, Hips-38) is wearing a size M. </p>
+      <p><strong>Manufacturer: </strong>Luxaura Textiles Private Limited<br>
+        Address - 27, VTMS Arcade, Bomannahalli, Bengaluru, 560068<br>
+        Country of Origin - India<br>
+        Support: 040-203849382<p><br>
+      <button (click)="addToCart(product.productId)" class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #errorTemplate>
+  <div class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+</ng-template>

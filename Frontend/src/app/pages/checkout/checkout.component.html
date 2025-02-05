@@ -1,0 +1,75 @@
+<div class="checkout-page">
+  <h1>Checkout</h1>
+
+  <!-- Address Section -->
+  <div class="address-section">
+    <h2>Delivery Addresses</h2>
+    <div class="address-container">
+      <!-- Loop through user addresses -->
+      <div
+        *ngFor="let address of userAddresses"
+        class="address-box"
+      >
+        <input
+          type="radio"
+          name="selectedAddress"
+          [value]="address.id"
+          [(ngModel)]="selectedAddressId"
+          id="address-{{ address.id }}"
+        />
+        <label for="address-{{ address.id }}">
+          <p>{{ address.street }}, {{ address.city }}</p>
+          <p>{{ address.state }}, {{ address.zipCode }}</p>
+        </label>
+      </div>
+
+      <!-- Add New Address -->
+      <div class="address-box add-new" (click)="openAddressPopup()">
+        <p>+</p>
+        <p>Add New Address</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Summary -->
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+    <!-- Product Name, Quantity, Price Labels -->
+    <div class="order-header">
+      <div class="order-column">Product Name</div>
+      <div class="order-column">Quantity</div>
+      <div class="order-column">Price</div>
+    </div>
+    
+    <div *ngFor="let item of checkoutItems" class="order-item">
+      <div class="order-column">{{ item.product.name }}</div>
+      <div class="order-column">{{ item.quantity }}</div>
+      <div class="order-column">₹{{ item.productPrice }}</div>
+    </div>
+    
+    <div class="total-price">
+      <p><strong>Total:</strong> ₹{{ totalPrice }}</p>
+    </div>
+  </div>
+
+  <!-- Payment Section -->
+  <div class="payment-section">
+    <h2>Payment</h2>
+    <button class="btn-primary" (click)="payWithRazorpay()">Pay Now</button>
+  </div>
+
+  <!-- Address Popup -->
+  <div class="popup" *ngIf="isPopupOpen">
+    <div class="popup-content">
+      <h3>Add New Address</h3>
+      <form (submit)="saveNewAddress($event)">
+        <input type="text" placeholder="Street" name="street" [(ngModel)]="newAddress.street" required />
+        <input type="text" placeholder="City" name="city" [(ngModel)]="newAddress.city" required />
+        <input type="text" placeholder="State" name="state" [(ngModel)]="newAddress.state" required />
+        <input type="text" placeholder="Zip Code" name="pincode" [(ngModel)]="newAddress.pincode" required />
+        <button type="submit" class="btn-primary">Save Address</button>
+        <button type="button" class="btn-secondary" (click)="closePopup()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

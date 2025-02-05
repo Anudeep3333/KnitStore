@@ -1,0 +1,72 @@
+<div class="container">
+  <h2>Add New Product</h2>
+  <form (submit)="addProduct()" #productForm="ngForm">
+    <div>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="product.name" name="name" required />
+    </div>
+    <div>
+      <label>Description:</label>
+      <textarea [(ngModel)]="product.description" name="description" required></textarea>
+    </div>
+    <div>
+      <label>Price:</label>
+      <input type="number" [(ngModel)]="product.price" name="price" required />
+    </div>
+    <div>
+      <label>Quantity:</label>
+      <input type="number" [(ngModel)]="product.quantity" name="quantity" required />
+    </div>
+    <div>
+      <label>Image URL:</label>
+      <input type="text" [(ngModel)]="product.imageUrl" name="imageUrl" />
+    </div>
+    <div>
+      <label>Category:</label>
+      <input type="text" [(ngModel)]="product.category" name="category" />
+    </div>
+    <div>
+      <label>Brand:</label>
+      <input type="text" [(ngModel)]="product.brand" name="brand" />
+    </div>
+    <div>
+      <label>SKU:</label>
+      <input type="text" [(ngModel)]="product.sku" name="sku" />
+    </div>
+    <div>
+      <label>Discount (%):</label>
+      <input type="number" [(ngModel)]="product.discount" name="discount" />
+    </div>
+    <div>
+      <label>Rating:</label>
+      <input type="number" step="0.1" [(ngModel)]="product.rating" name="rating" />
+    </div>
+    <div>
+      <label>Reviews Count:</label>
+      <input type="number" [(ngModel)]="product.reviewsCount" name="reviewsCount" />
+    </div>
+    <div>
+      <label>Specifications:</label>
+      <textarea [(ngModel)]="product.specifications" name="specifications"></textarea>
+    </div>
+    <div>
+      <label>Featured:</label>
+      <input type="checkbox" [(ngModel)]="product.isFeatured" name="isFeatured" />
+    </div>
+    <div>
+      <label>Availability:</label>
+      <select [(ngModel)]="product.availabilityStatus" name="availabilityStatus">
+        <option value="In Stock">In Stock</option>
+        <option value="Out of Stock">Out of Stock</option>
+      </select>
+    </div>
+    <button type="submit">Add Product</button>
+  </form>
+
+  <div *ngIf="successMessage" class="success">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+</div>

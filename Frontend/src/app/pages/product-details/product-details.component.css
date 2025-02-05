@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Product Details */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.product-details:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-header .category {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.product-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.product-image img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.product-info p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.product-info p strong {
+  color: #333;
+}
+
+.product-info .btn {
+  background-color: #28a745;
+  color: white;
+  margin-top: 30px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-info .btn:hover {
+  background-color: #218838;
+}
+
+.product-info .available {
+  color: #28a745;
+}
+
+.product-info .unavailable {
+  color: #dc3545;
+}
+
+/* Error Template */
+.error {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8d7da;
+  border-radius: 5px;
+  color: #721c24;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .product-details {
+    padding: 15px;
+  }
+
+  .product-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image img {
+    max-width: 80%;
+  }
+}

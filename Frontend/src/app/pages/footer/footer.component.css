@@ -1,0 +1,94 @@
+/* footer.component.css */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 10px 0;
+    left: 300px;
+    height: 70px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-logo .footer-brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f39c12; /* Gold accent */
+  }
+  
+  .footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-links ul li a:hover {
+    text-decoration: underline;
+  }
+  .footer-social-media{
+    display: flex;
+    gap:20px;
+  }
+  .footer-social-media a {
+    margin-right: 15px;
+  }
+  
+  .footer-social-media img {
+    width: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-social-media img:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-newsletter {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  
+  .newsletter-input {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    width: 250px;
+  }
+  
+  .subscribe-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .subscribe-btn:hover {
+    background-color: #e67e22;
+  }
+  

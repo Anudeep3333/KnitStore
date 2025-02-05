@@ -1,0 +1,29 @@
+/* Ensure the entire app spans the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Flex layout for the app container */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+  }
+  
+  /* Content grows to fill the available space */
+  .content-container {
+    flex: 1;
+    /* padding: 1rem; */
+    box-sizing: border-box;
+  }
+  
+  /* Footer stays at the bottom */
+  app-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+  
