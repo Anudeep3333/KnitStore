@@ -40,53 +40,28 @@ name: KnitStore
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-
-    runs-on: windows-latest  # Use the latest Windows runner
-
-    env:
-      Solution_Name: Backend/Ecommerce.sln  # Your .NET solution file
-      Configuration: ${{ matrix.configuration }}  # Configuration (Debug/Release)
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # Make sure to fetch all branches and tags
+      uses: actions/checkout@v2
 
-    # Install .NET SDK (dotnet SDK for building .NET Core/.NET 5+ projects)
-    - name: Install .NET SDK
-      uses: actions/setup-dotnet@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 9.0.x  # Adjust this to match the version your app is using (e.g., 6.0, 7.0)
+        dotnet-version: '9.0.x'
 
-    # Restore dependencies
     - name: Restore dependencies
-      run: dotnet restore ${{ env.Solution_Name }} --configuration ${{ env.Configuration }}
+      run: dotnet restore Backend/Ecommerce/Ecommerce.csproj
 
-    # Build the solution
-    - name: Build the solution
-      run: dotnet build ${{ env.Solution_Name }} --configuration ${{ env.Configuration }} --no-restore
+    - name: Build
+      run: dotnet build Backend/Ecommerce/Ecommerce.csproj --configuration Release --no-restore
 
-    # Optionally, run tests (if you have any unit tests defined)
-    # - name: Run tests
-    #   run: dotnet test ${{ env.Solution_Name }} --configuration ${{ env.Configuration }}
-
-    # Publish the application (if you want to create a deployment package)
-    - name: Publish the application
-      run: dotnet publish ${{ env.Solution_Name }} --configuration ${{ env.Configuration }} --output ./publish
-
-    # Upload build artifacts (if you need to store the build output)
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: .NET Build Output
-        path: ./publish  # The output folder where the publish step created files
+    - name: Run tests
+      run: dotnet test Backend/Ecommerce/Ecommerce.csproj --no-build --verbosity normal
