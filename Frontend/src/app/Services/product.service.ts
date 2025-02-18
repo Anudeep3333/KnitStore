@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ProductService {
   
 
-  private apiUrl = 'https://localhost:7181/api/Products/add'; // Adjust URL if needed
+  private apiUrl = 'http://localhost:5000/api/Products/add'; // Adjust URL if needed
 
   constructor(private http: HttpClient) { }
 
@@ -17,14 +17,14 @@ export class ProductService {
   }
 
   addToCart(cartData: any): Observable<any> {
-    return this.http.post('https://localhost:7181/api/cart', cartData);
+    return this.http.post('http://localhost:5000/api/cart', cartData);
   }
 
   getProducts():Observable<any>{
-    return this.http.get('https://localhost:7181/api/Products/get');
+    return this.http.get('http://localhost:5000/api/Products/get');
   }
 
   getProductById(id: number): Observable<any> {
-    return this.http.get(`https://localhost:7181/api/Products/${id}`);
+    return this.http.get(`http://localhost:5000/api/Products/${id}`);
   }
 }

@@ -5343,13 +5343,12 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/anudeepdasari/Desktop/KnitStore/KnitStore/Backend/Ecommerce/Ecommerce.csproj",
+      "projectUniqueName": "/Users/anudeepdasari/Desktop/KnitStore/Backend/Ecommerce/Ecommerce.csproj",
       "projectName": "Ecommerce",
-      "projectPath": "/Users/anudeepdasari/Desktop/KnitStore/KnitStore/Backend/Ecommerce/Ecommerce.csproj",
+      "projectPath": "/Users/anudeepdasari/Desktop/KnitStore/Backend/Ecommerce/Ecommerce.csproj",
       "packagesPath": "/Users/anudeepdasari/.nuget/packages/",
-      "outputPath": "/Users/anudeepdasari/Desktop/KnitStore/KnitStore/Backend/Ecommerce/obj/",
+      "outputPath": "/Users/anudeepdasari/Desktop/KnitStore/Backend/Ecommerce/obj/",
       "projectStyle": "PackageReference",
-      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "/Users/anudeepdasari/.nuget/NuGet/NuGet.Config"
       ],
@@ -5373,7 +5372,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       }
     },
     "frameworks": {
@@ -5434,7 +5433,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/anudeepdasari/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

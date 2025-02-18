@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6fbfzPuODHY=",
+  "dgSpecHash": "ICCG0zjHIug=",
   "success": true,
-  "projectFilePath": "/Users/anudeepdasari/Desktop/KnitStore/KnitStore/Backend/Ecommerce/Ecommerce.csproj",
+  "projectFilePath": "/Users/anudeepdasari/Desktop/KnitStore/Backend/Ecommerce/Ecommerce.csproj",
   "expectedPackageFiles": [
     "/Users/anudeepdasari/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/anudeepdasari/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

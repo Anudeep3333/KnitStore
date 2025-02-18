@@ -7,18 +7,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
 
-    private apiUrl = 'https://localhost:7181/api/cart';
+    private apiUrl = 'http://localhost:5000/api/cart';
 
     constructor(
       private http: HttpClient
     ) { }
 
     addToCart(cartData: any): Observable<any> {
-      return this.http.post('https://localhost:7181/api/cart', cartData);
+      return this.http.post('http://localhost:5000/api/cart', cartData);
     }
     
     getCartItems(userId: number): Observable<any> {
-      return this.http.get(`https://localhost:7181/api/cart/${userId}`);
+      return this.http.get(`http://localhost:5000/api/cart/${userId}`);
     }
 
     updateCartItem(item: any): Observable<any> {

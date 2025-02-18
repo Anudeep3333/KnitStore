@@ -12,7 +12,7 @@ export class AuthService {
 
   // Register a new user
   register(data: any): Observable<any> {
-    return this.http.post('https://localhost:7181/api/Account/register', data).pipe(
+    return this.http.post('http://localhost:5000/api/Account/register', data).pipe(
       catchError((error) => {
         console.error('Error during registration:', error);
         return throwError(() => error);
@@ -23,7 +23,7 @@ export class AuthService {
   //login a user
   login(data: any): Observable<any> {
     console.log("login service")
-    return this.http.post('https://localhost:7181/api/Account/login', data).pipe(
+    return this.http.post('http://localhost:5000/api/Account/login', data).pipe(
       catchError((error) => {
         console.error('Error during login:', error);
         return throwError(() => error);
@@ -32,11 +32,11 @@ export class AuthService {
   }
 
   getaddresses(userId:number):Observable<any>{
-    return this.http.get(`https://localhost:7181/api/Address/${userId}`);
+    return this.http.get(`http://localhost:5000/api/Address/${userId}`);
   }
 
   addaddress(address:any): Observable<any>{
-    return this.http.post('https://localhost:7181/api/Address/add',address).pipe(
+    return this.http.post('http://localhost:5000/api/Address/add',address).pipe(
       catchError((error)=>{
         console.error('Error while saving address: ',error);
         return throwError(()=>error);
